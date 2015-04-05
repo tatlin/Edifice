@@ -1,43 +1,55 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
 *.msi
-*.msm
-*.msp
+*.o
+*.so
+bin/
+obj/
+packages/
 
-# Windows shortcuts
-*.lnk
+#find -type d -name bin -exec git rm -r {} \;
 
-# =========================
-# Operating System Files
-# =========================
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# OSX
-# =========================
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
 
-# Thumbnails
-._*
+# DEBUG FILES #
+###############
+*.pdb
+*.cache
+*.suo
+*.user
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+# PYTHON #
+###############
+*.pyc
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# RESHARPER #
+###############
+*_ReSharper*
