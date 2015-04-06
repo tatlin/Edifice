@@ -75,7 +75,7 @@ namespace EdificeCore
 
             if (parameters.Plane == null)
             {
-                throw new ArgumentException("You must supply a valid normal.");
+                throw new ArgumentException("You must supply a valid plane.");
             }
 
             var grid = new Grid(parameters);

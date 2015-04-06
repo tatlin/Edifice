@@ -6,32 +6,38 @@ namespace EdificeDynamo.Wrappers
 {
     public class Grid : Element, IGraphicItem
     {
+        private Grid(GridCreationParameters parameters)
         {
             var grid = EdificeObjectManager.FindElement() as EdificeCore.Grid;
 
             if (grid == null)
             {
-                var parameters = new GridCreationParameters()
-                {
-                    Name = name,
-                    Plane = plane,
-                    Start = start,
-                    End = end
-                };
-
                 grid = ElementFactory.CreateGrid(parameters);
             }
             else
             {
-                grid.Name = name;
-                grid.Plane = plane;
-                grid.Start = start;
-                grid.End = end;
+                grid.Name = parameters.Name;
+                grid.Plane = parameters.Plane;
+                grid.Start = parameters.Start;
+                grid.End = parameters.End;
             }
 
             InternalElement = grid;
 
             EdificeObjectManager.RegisterTraceableObjectForId(new TraceableId(grid.Id), grid);  
+        }
+
+        public static Grid ByPlane(string name, Plane plane, Point start, Point end)
+        {
+            var parameters = new GridCreationParameters()
+            {
+                Name = name,
+                Plane = plane,
+                Start = start,
+                End = end
+            };
+
+            return new Grid(parameters);
         }
 
         public void Tessellate(IRenderPackage package, double tol = -1, int maxGridLines = 512)
