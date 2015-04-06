@@ -8,6 +8,8 @@ namespace EdificeMongoDb
     {
         public const string DEFAULT_DB_NAME = "edifice";
         public const string DEFAULT_ELEMENT_COLLECTION_NAME = "elements";
+        public const string TEST_DB_NAME = "edifice_test";
+        public const string TEST_COLLECTION_NAME = "elements";
 
         private MongoServer server;
         private const string CONNECTION_STRING = "mongodb://localhost";

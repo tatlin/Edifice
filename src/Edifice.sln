@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdificeMongoDb", "EdificeMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdificeMongoDbTests", "EdificeMongoDbTests\EdificeMongoDbTests.csproj", "{ACF02674-C335-48B7-A940-991AD1337CC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdificeCoreTests", "EdificeCoreTests\EdificeCoreTests.csproj", "{989A34EA-2C2D-4684-AEBF-7D09A87C9036}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{ACF02674-C335-48B7-A940-991AD1337CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACF02674-C335-48B7-A940-991AD1337CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACF02674-C335-48B7-A940-991AD1337CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989A34EA-2C2D-4684-AEBF-7D09A87C9036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989A34EA-2C2D-4684-AEBF-7D09A87C9036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989A34EA-2C2D-4684-AEBF-7D09A87C9036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989A34EA-2C2D-4684-AEBF-7D09A87C9036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

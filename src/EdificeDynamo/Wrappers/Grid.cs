@@ -1,18 +1,25 @@
-﻿using System;
-using Autodesk.DesignScript.Geometry;
+﻿using Autodesk.DesignScript.Geometry;
 using Autodesk.DesignScript.Interfaces;
+using EdificeCore;
 
 namespace EdificeDynamo.Wrappers
 {
     public class Grid : Element, IGraphicItem
     {
-        private Grid(string name, Plane plane, Point start, Point end)
         {
             var grid = EdificeObjectManager.FindElement() as EdificeCore.Grid;
 
             if (grid == null)
             {
-                grid = new EdificeCore.Grid(name, plane, start, end);
+                var parameters = new GridCreationParameters()
+                {
+                    Name = name,
+                    Plane = plane,
+                    Start = start,
+                    End = end
+                };
+
+                grid = ElementFactory.CreateGrid(parameters);
             }
             else
             {
@@ -23,34 +30,8 @@ namespace EdificeDynamo.Wrappers
             }
 
             InternalElement = grid;
-            Save();
 
             EdificeObjectManager.RegisterTraceableObjectForId(new TraceableId(grid.Id), grid);  
-        }
-
-        public static Grid ByPlane(string name, Plane plane, Point start, Point end)
-        {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ArgumentException("You must supply a name.");
-            }
-
-            if (start == null)
-            {
-                throw new ArgumentException("You must supply a valid start point.");
-            }
-
-            if (end == null)
-            {
-                throw new ArgumentException("You must supply a valid end point.");
-            }
-
-            if (plane == null)
-            {
-                throw new ArgumentException("You must supply a valid normal.");
-            }
-
-            return new Grid(name, plane, start, end);
         }
 
         public void Tessellate(IRenderPackage package, double tol = -1, int maxGridLines = 512)
